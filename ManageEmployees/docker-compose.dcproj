@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>f54378e3-ff67-4530-aae6-2d763a8fed47</ProjectGuid>
+    <ProjectGuid>f4667902-bc1a-4a32-9885-effeb72fd7d6</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
     <DockerServiceName>manageemployees</DockerServiceName>

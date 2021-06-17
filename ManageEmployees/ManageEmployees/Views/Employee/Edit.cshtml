@@ -6,7 +6,7 @@
 <h4>@ViewData["Title"]</h4>
 @if (alertModel != null)
 {
-    <alerthelper type="@alertModel.Type" message="@alertModel.Text"></alerthelper>
+<alerthelper type="@alertModel.Type" message="@alertModel.Text"></alerthelper>
 }
 <form method="post">
     <input type="hidden" asp-for="Id">

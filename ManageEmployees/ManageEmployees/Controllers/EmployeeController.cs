@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ManageEmployees.Models;
@@ -10,13 +12,12 @@ using Domain.Constants;
 
 namespace ManageEmployees.Controllers
 {
-
     public class EmployeeController : Controller
-    {        
+    {
         private readonly IEmployeeRestService _employeeRestService;
 
         public EmployeeController(IEmployeeRestService employeeRestService)
-        {            
+        {
             _employeeRestService = employeeRestService;
         }
 
@@ -55,7 +56,7 @@ namespace ManageEmployees.Controllers
                 return View(model);
             }
             catch (Exception ex)
-            {                
+            {
                 return View("Error", new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
             }
         }
@@ -91,7 +92,7 @@ namespace ManageEmployees.Controllers
                 return View(model);
             }
             catch (Exception ex)
-            {               
+            {
                 return View("Error", new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
             }
         }
@@ -115,7 +116,7 @@ namespace ManageEmployees.Controllers
                 }
             }
             catch (Exception ex)
-            {                
+            {
                 return View("Error", new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
             }
         }

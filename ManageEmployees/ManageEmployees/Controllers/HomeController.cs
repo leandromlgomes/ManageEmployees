@@ -1,14 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using Microsoft.AspNetCore.Authorization;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using ManageEmployees.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ManageEmployees.Controllers
 {
     [Authorize]
     public class HomeController : Controller
     {
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Index()
         {
             return View();
