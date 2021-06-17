@@ -13,6 +13,6 @@ Utilize o endpoint /api/Login para receber o token
 - UserName: admin
 - PassWord: admin
 
-# collection POSTMAN 
+# Collection POSTMAN 
 compartilhada via link:
 https://www.getpostman.com/collections/e62ffd8a413d4d3dff35
