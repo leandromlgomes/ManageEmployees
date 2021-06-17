@@ -1,4 +1,5 @@
 ﻿using Domain.Interfaces;
+using Domain.Interfaces.API.Services.Login;
 using Domain.Interfaces.Services.Employee;
 using Microsoft.Extensions.DependencyInjection;
 using Services;
@@ -15,6 +16,7 @@ namespace CrossCutting.API.DependencyInjection
         {
             serviceCollection.AddTransient<IEmployeeService, EmployeeService>();                        
             serviceCollection.AddTransient<IUtilitiesService, UtilitiesService>();                        
+            serviceCollection.AddTransient<ILoginService, LoginService>();                        
         }
 
     }

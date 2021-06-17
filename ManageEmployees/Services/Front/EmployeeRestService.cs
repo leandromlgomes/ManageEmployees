@@ -49,7 +49,7 @@ namespace Services.Front
 
             RestClient client = new RestClient(_webAPIConfig.URL);
             RestRequest request = new RestRequest("api/employee", Method.GET);
-            //client.AddDefaultHeader("Authorization", string.Format("Bearer {0}", token));
+            client.AddDefaultHeader("Authorization", string.Format("Bearer {0}", token));
 
             System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 
@@ -62,15 +62,6 @@ namespace Services.Front
                 employeeViewModel.Employees = result;
 
                 return employeeViewModel;
-            }
-            else
-            {
-                var teste = new EmployeeViewModel { Employees = new List<EmployeeResponseDomainModel>() };
-                for (int i = 0; i < 10; i++)
-                {
-                    teste.Employees.Add(new EmployeeResponseDomainModel { Id = i, Email = "Email" + i, Name = "Nome" + i });
-                }
-                return teste;
             }
 
             return new EmployeeViewModel { Employees = new List<EmployeeResponseDomainModel>() };
