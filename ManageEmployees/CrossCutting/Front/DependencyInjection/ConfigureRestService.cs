@@ -12,6 +12,7 @@ namespace CrossCutting.Front.DependencyInjection
         {
             serviceCollection.AddTransient<IEmployeeRestService, EmployeeRestService>();                        
             serviceCollection.AddTransient<IUtilitiesService, UtilitiesService>();                        
+            serviceCollection.AddTransient<ILoginRestService, LoginRestService>();                        
         }
 
     }

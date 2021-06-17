@@ -8,15 +8,18 @@ using ManageEmployees.Models;
 using Domain.Interfaces;
 using Domain.ViewModels.Login;
 using Microsoft.AspNetCore.Http;
+using Domain.Interfaces.Front.Services;
 
 namespace ManageEmployees.Controllers
 {
     public class LoginController : Controller
     {
         private readonly IUtilitiesService _utilities;
-        public LoginController(IUtilitiesService utilities)
+        private readonly ILoginRestService _service;
+        public LoginController(IUtilitiesService utilities, ILoginRestService service)
         {
             _utilities = utilities;
+            _service = service;
         }
 
         public IActionResult Index()
@@ -27,13 +30,12 @@ namespace ManageEmployees.Controllers
         [HttpPost]
         public IActionResult Login(LoginViewModel model)
         {
-            if (model.UserName.ToUpper() == "ADMIN" && model.Password.ToUpper() == "ADMIN")
-            {
-                var token = _utilities.GenerateJSONWebToken();
-
+            var token = _service.Login(model);
+            if (token.Result.Result != "")
+            {                
                 CookieOptions option = new CookieOptions();
                 option.Expires = DateTime.Now.AddHours(1);
-                HttpContext.Response.Cookies.Append("JwT", token);
+                HttpContext.Response.Cookies.Append("JwT", token.Result.Result);
 
                 return RedirectToAction("Index", "Employee");
             }

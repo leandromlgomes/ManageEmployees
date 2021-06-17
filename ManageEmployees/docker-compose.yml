@@ -11,6 +11,8 @@ services:
     build:
       context: .
       dockerfile: ManageEmployees/Dockerfile
+    ports:
+    - "44320:80"
     depends_on:
     - db
     links:
