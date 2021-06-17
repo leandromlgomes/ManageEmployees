@@ -1,10 +1,7 @@
 ﻿using Domain.Helpers;
 using Domain.ViewModels.Employee;
 using Microsoft.Extensions.Options;
-using System;
-using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
 using Domain.Dtos.Employee;

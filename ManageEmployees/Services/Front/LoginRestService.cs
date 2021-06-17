@@ -1,13 +1,7 @@
 ﻿using Domain.Helpers;
-using Domain.ViewModels.Employee;
 using Microsoft.Extensions.Options;
-using System;
-using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
-using Domain.Dtos.Employee;
 using Domain.Interfaces.Front.Services;
 using Domain.ViewModels.Login;
 
@@ -26,7 +20,7 @@ namespace Services.Front
         public async Task<QueryResult<string>> Login(LoginViewModel login)
         {
             RestClient client = new RestClient(_webAPIConfig.URL);
-            RestRequest request = new RestRequest("api/login/login", Method.POST);            
+            RestRequest request = new RestRequest("api/login", Method.POST);            
             request.AddJsonBody(login);
 
             System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };

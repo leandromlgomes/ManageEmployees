@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Data.Mapping;
+﻿using Data.Mapping;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
