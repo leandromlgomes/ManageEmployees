@@ -5,6 +5,14 @@
 - Banco de dados SqlServer
 - Documentação feita com Swagger
 
+# Iniciando o projeto
+Set docker-compose como projeto de inicialização e rode o projeto
+
+# Utilização do Postman e Swagger
+Utilize o endpoint /api/Login para receber o token
+- UserName: admin
+- PassWord: admin
+
 # collection POSTMAN 
 compartilhada via link:
 https://www.getpostman.com/collections/e62ffd8a413d4d3dff35
