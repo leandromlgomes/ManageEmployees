@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  db:
+    image: "mcr.microsoft.com/mssql/server:2017-latest"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=1P0k3rn*M0nst3r1
+  manageemployees:
+    image: ${DOCKER_REGISTRY-}manageemployees
+    build:
+      context: .
+      dockerfile: ManageEmployees/Dockerfile
+    depends_on:
+    - db
+    links:
+    - api
+  api:
+    image: ${DOCKER_REGISTRY-}api
+    build:
+      context: .
+      dockerfile: API/Dockerfile 
+    ports:
+    - "44398:80"
+    depends_on:
+    - db
