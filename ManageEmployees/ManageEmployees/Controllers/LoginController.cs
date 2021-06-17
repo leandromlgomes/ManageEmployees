@@ -31,7 +31,7 @@ namespace ManageEmployees.Controllers
         public IActionResult Login(LoginViewModel model)
         {
             var token = _service.Login(model);
-            if (token.Result.Result != "")
+            if (token.Result.Succeeded)
             {                
                 CookieOptions option = new CookieOptions();
                 option.Expires = DateTime.Now.AddHours(1);
@@ -41,7 +41,7 @@ namespace ManageEmployees.Controllers
             }
             else
             {
-                return Redirect("");
+                return RedirectToAction("Index", "Home");
             }
         }
     }

@@ -41,7 +41,7 @@ namespace Services.Front
             {
                 Succeeded = false,
                 Result = response.Data,
-                Message = "Usuário ou senhas inválidos!"
+                Message = "Não foi possivel conectar o servidor ou usuário ou senhas inválidos!"
             };
         }
   
